@@ -1,8 +1,0 @@
-{
-    "df_price_overall": "region mean : prc, rentPrc, spc1, spc2, prc/spc1, rentPrc/spc1 / region + rletTpNm : prc, rentPrc, spc1, spc2, prc/spc1, rentPrc/spc1",
-    "df_region_price": "region : prc, rentPrc, spc1, spc2, prc/spc1, rentPrc/spc1",
-    "df_region_type_price": "region + rletTpNm : prc, rentPrc, spc1, spc2",
-    "df_type_price": "rletTpNm : prc, rentPrc, spc1, spc2, prc/spc1, rentPrc/spc1",
-    "df_region_type_count": "region : rletTpNm number",
-    "naver_region_name_estate": "raw_crawling_data"
-}

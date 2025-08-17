@@ -1,11 +1,26 @@
+# 🏠 AI 부동산 분석 플랫폼 - 통합 의존성 목록
+
+# === 기본 데이터 처리 ===
 requests==2.31.0
 pandas==2.1.4
-fake-useragent==1.4.0
-streamlit==1.31.0
-plotly==5.18.0
 numpy==1.26.3
+
+# === 웹 크롤링 ===
+fake-useragent==1.4.0
+
+# === 웹 UI (Streamlit) ===
+streamlit>=1.28.0
+plotly>=5.15.0
+
+# === AI/ML (RAG 시스템) ===
 openai>=1.86.0
-python-dotenv==1.0.1
+langchain
 langchain-core>=0.3.72
 langchain-community>=0.3.27
-langchain-openai>=0.3.28 
+langchain-openai>=0.3.28
+langchain-text-splitters
+faiss-cpu
+pymupdf
+
+# === 환경 설정 ===
+python-dotenv>=1.0.1 

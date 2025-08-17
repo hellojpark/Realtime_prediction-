@@ -1,7 +1,0 @@
-# OpenAI API 키를 여기에 입력하세요
-OPENAI_API_KEY=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
-
-# 사용 방법:
-# 1. 이 파일을 .env로 복사하세요: cp env_template.txt .env
-# 2. OPENAI_API_KEY 값을 실제 API 키로 변경하세요
-# 3. .env 파일은 git에 커밋하지 마세요!

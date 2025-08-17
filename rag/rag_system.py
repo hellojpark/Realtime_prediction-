@@ -3,15 +3,24 @@ RAG 시스템 통합 모듈
 """
 
 import os
-from dotenv import load_dotenv
 
 from document_loader import EstateDocumentLoader
 from text_processor import TextProcessor
 from vector_store import VectorStoreManager
 from rag_chain import RAGChain
 
-# .env 파일에서 환경변수 로드
-load_dotenv()
+# 환경변수 로드 (프로젝트 루트의 .env 파일 사용)
+try:
+    from dotenv import load_dotenv
+    from pathlib import Path
+    
+    # 프로젝트 루트의 .env 파일 경로
+    project_root = Path(__file__).parent.parent
+    env_path = project_root / ".env"
+    
+    load_dotenv(dotenv_path=env_path, override=False)  # 기존 환경변수 우선
+except ImportError:
+    pass  # python-dotenv가 없어도 작동
 
 
 class EstateRAGSystem:
