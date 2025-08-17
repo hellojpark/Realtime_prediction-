@@ -11,6 +11,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 from datetime import datetime
 
+# Windows 환경에서 한글 처리를 위한 인코딩 설정
+import locale
+if sys.platform.startswith('win'):
+    try:
+        os.environ['PYTHONIOENCODING'] = 'utf-8'
+    except:
+        pass
+
 # RAG 모듈 경로 추가
 sys.path.append(str(Path(__file__).parent.parent / "rag"))
 

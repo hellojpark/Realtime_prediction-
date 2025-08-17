@@ -39,20 +39,29 @@ def check_requirements():
     return True
 
 
-def check_env_file():
-    """환경변수 파일 확인"""
+def check_openai_key():
+    """OpenAI API 키 확인"""
     
-    env_file = Path(__file__).parent.parent / "rag" / ".env"
-    env_template = Path(__file__).parent.parent / "rag" / "env_template.txt"
+    # 프로젝트 루트의 .env 파일 확인
+    try:
+        from dotenv import load_dotenv
+        project_root = Path(__file__).parent.parent
+        env_path = project_root / ".env"
+        load_dotenv(dotenv_path=env_path, override=False)
+    except ImportError:
+        pass
     
-    if not env_file.exists():
-        if env_template.exists():
-            print("⚠️  .env 파일이 없습니다.")
-            print(f"다음 명령어로 생성해주세요:")
-            print(f"cp {env_template} {env_file}")
-            print("그리고 .env 파일에 올바른 OPENAI_API_KEY를 설정해주세요.")
-        else:
-            print("❌ 환경변수 템플릿 파일을 찾을 수 없습니다.")
+    api_key = os.environ.get('OPENAI_API_KEY')
+    
+    if not api_key:
+        env_path = Path(__file__).parent.parent / ".env"
+        print("⚠️  OPENAI_API_KEY 환경변수가 설정되지 않았습니다.")
+        print("\n💡 다음 중 하나의 방법으로 설정해주세요:")
+        print("   1. 시스템 환경변수로 설정")
+        print("   2. 터미널에서: set OPENAI_API_KEY=your_key_here (Windows)")
+        print("   3. 터미널에서: export OPENAI_API_KEY=your_key_here (Mac/Linux)")
+        print(f"   4. {env_path} 파일에서 OPENAI_API_KEY=your_key_here 설정")
+        print("\n🔑 OpenAI API 키는 https://platform.openai.com/api-keys 에서 발급받으세요.")
         return False
     
     return True
@@ -103,9 +112,9 @@ def main():
     if not check_requirements():
         sys.exit(1)
     
-    # 2. 환경변수 파일 확인
-    print("\n2. 환경변수 파일 확인 중...")
-    if not check_env_file():
+    # 2. OpenAI API 키 확인
+    print("\n2. OpenAI API 키 확인 중...")
+    if not check_openai_key():
         print("💡 환경변수 설정 후 다시 실행해주세요.")
         sys.exit(1)
     
@@ -118,6 +127,9 @@ def main():
     print("🌐 브라우저에서 http://localhost:8501 로 접속하세요.")
     print("📱 모바일에서도 접속 가능합니다!")
     print("⚠️  앱을 종료하려면 Ctrl+C를 누르세요.")
+    print("\n💡 실행 방법:")
+    print("   - 권장: python run_app.py (사전 체크 포함)")
+    print("   - 직접: streamlit run app.py (사전 체크 없음)")
     print("=" * 60)
     
     try:
