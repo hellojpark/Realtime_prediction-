@@ -1,0 +1,14 @@
+streamlit>=1.28.0
+plotly>=5.15.0
+pandas>=1.5.0
+numpy>=1.24.0
+
+# RAG 시스템 의존성
+langchain
+langchain-community
+langchain-openai
+langchain-text-splitters
+faiss-cpu
+openai
+python-dotenv
+pymupdf

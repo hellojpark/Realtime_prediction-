@@ -1,0 +1,20 @@
+{
+    "atclNo": "매물 번호",
+    "atclNm": "건물명",
+    "region": "동 이름",
+    "cortarNo": "지역 코드",
+    "rletTpNm": "매물 종류",
+    "tradTpNm": "거래 종류",
+    "flrInfo": "층수 정보",
+    "prc": "보증금",
+    "rentPrc": "월세",
+    "spc1": "공급면적",
+    "spc2": "전용면적",
+    "direction": "방향",
+    "atclCfmYmd": "확인 일자",
+    "lat": "위도",
+    "lng": "경도",
+    "atclFetrDesc": "특징 설명",
+    "bildNm": "동",
+    "rltrNm": "부동산 이름"
+}
