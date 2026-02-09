@@ -1,0 +1,30 @@
+[global]
+developmentMode = false
+showWarningOnDirectExecution = false
+
+[server]
+headless = false
+port = 8501
+address = "localhost"
+maxUploadSize = 200
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[theme]
+primaryColor = "#2196f3"
+backgroundColor = "#ffffff" 
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#262730"
+font = "sans serif"
+
+[runner]
+magicEnabled = true
+
+[client]
+showErrorDetails = true
+toolbarMode = "auto"

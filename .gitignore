@@ -137,6 +137,29 @@ celerybeat.pid
 # Environments
 .env
 .envrc
+*.env
+.env.local
+.env.*.local
+
+# API Keys and sensitive data
+**/api_keys.txt
+**/credentials.json
+**/*.key
+**/*.pem
+
+# Large data files (optional - 큰 CSV 파일들)
+# *.csv
+# estate_data/*.csv
+
+# Cache and temporary files
+vectorstore_cache/
+*.cache
+.streamlit/secrets.toml
+
+# Model files (optional - 큰 모델 파일들)
+# *.pkl
+# *.joblib
+# *.h5
 .venv
 env/
 venv/
